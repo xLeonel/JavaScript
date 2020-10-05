@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sla</title>
+</head>
+
+<body>
+    <h2>Não temos titulo</h2>
+
+    <form enctype="multipart/form-data" method="POST" onsubmit="add()">
+
+        <div class="tabela">
+            <label>Nome Pet</label>
+            <input type="text" placeholder="Nome Pet" name="nomePET" required id="nomepet">
+        </div>
+
+        <div class="tabela">
+            <label>Noem Dono</label>
+            <input type="text" placeholder="Noem Dono" name="nomeDono" required id="nomedono">
+        </div>
+
+        <div class="tabela">
+            <label>Raça</label>
+            <input type="text" placeholder="Labradador" name="raca" id="raca" required>
+        </div>
+
+        <div class="tabela">
+            <label>Idade</label>
+            <input type="text" placeholder="" name="idade" id="idade" required>
+        </div>
+
+        <div class="tabela">
+            <label>Cor</label>
+            <input type="text" placeholder="" name="cor" id="cor" required>
+        </div>
+
+        <div class="tabela">
+            <label>Escolha um Porte</label>
+            <select name="porte" id="portes" id="porte">
+                <option value="" disabled selected>Selecione</option>
+                <option value="pequeno">Pequeno</option>
+                <option value="medio">Médio</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+
+        <div class="tabela">
+            <label>Escolhe o tipo do Pet</label>
+            <select name="tipopet" id="tipopets" id="pet">
+                <option value="" disabled selected>Selecione</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+            </select>
+        </div>
+
+        <div class="tabela">
+            <p>Selecione o sexo:</p>
+
+            <label for="male">Macho</label>
+            <input type="radio" id="macho" name="sexo" value="macho" checked>
+            <br>
+            <label for="female">Fêmea</label>
+            <input type="radio" id="femea" name="sexo" value="femea">
+        </div>
+
+
+        <button type="submit" class="butao">Cadastre-se</button>
+
+    </form>
+</body>
+<script>
+    var listProdut = [];
+
+
+    function add() { 
+        // alert(document.getElementById('nomepet').value);
+        // alert(document.getElementById('nomedono').value);
+        // alert(document.getElementById('raca').value);
+        // alert(document.getElementById('idade').value);
+        // alert(document.getElementById('cor').value);
+        // alert(document.getElementById('portes').value);
+        // alert(document.getElementById('tipopets').value);
+        // alert(document.querySelector('input[name="sexo"]:checked').value);
+
+        // var form = document.querySelector('form');
+        // var data = new FormData(form);
+
+        // console.log(data);
+
+        // var pet = {
+        //     nomepet: document.getElementById('nomepet').value,
+        //     nomedono: document.getElementById('nomedono').value,
+        //     raca: document.getElementById('raca').value,
+        //     idade: document.getElementById('idade').value,
+        //     cor: document.getElementById('cor').value,
+        //     porte: document.getElementById('portes').value,
+        //     tipopet: document.getElementById('tipopets').value,
+        //     Sexo: document.querySelector('input[name="sexo"]:checked').value
+        // };
+        let num = 0;
+
+        let stringModel = `nomepet:${document.getElementById('nomepet').value};nomedono:${document.getElementById('nomedono').value};raca:${document.getElementById('raca').value};idade:${document.getElementById('idade').value};cor:${document.getElementById('cor').value};portes:${document.getElementById('portes').value};tipopets:${document.getElementById('tipopets').value};sexo:${document.querySelector('input[name="sexo"]:checked').value};`;
+
+        listProdut.push(stringModel);
+        num++;
+
+        for (let index = 1; index < listProdut.length; index++) {
+            console.log(listProdut[index]);
+        }
+
+
+        alert('Pet Cadastrado');
+
+
+
+
+    }
+
+
+
+</script>
+
+</html>

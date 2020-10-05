@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?</title>
+    <link rel="stylesheet" href="beleza.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#cep").mask("00000-000");
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="demo">
+        <div>
+            <h1>Onde eu Moro?</h1>
+        </div>
+        <div id="respota">
+            <input id="cep" placeholder="seu cep" name="cep" type="text">
+            <button type="button" onclick="get()">Me Procure</button>
+        </div>
+    </div>
+</body>
+<script>
+    function get() {
+        var cep = document.getElementById('cep').value;
+
+        cep = cep.replace(/\D/g, '');
+
+        const URL = `https://viacep.com.br/ws/${cep}/json/`;                                                
+
+        fetch(URL)
+            .then(resposta => resposta.json())
+            .then(data => mostrarResposta(data))
+            .catch(erro => console.error(erro));
+
+    }
+
+    function mostrarResposta(cep) {
+        const mensagem = `
+        CEP: ${cep.cep}<br>
+        Logradouro: ${cep.logradouro}<br>
+        Complemento: ${cep.complemento}<br>
+        Bairro: ${cep.bairro}<br>
+        Cidade ${cep.localidade}<br>
+        Estado: ${cep.uf}
+    `;
+        document.getElementById('respota').innerHTML = mensagem;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="media()" value="ver media escolar">
+</body>
+<script>
+    var nota1 = prompt("nota 1");
+    var nota2 = prompt("nota 2");
+    var nota3 = prompt("nota 3");
+    var nota4 = prompt("nota 4");
+
+    function media() {
+
+        var media = (parseInt(nota1) + parseInt(nota2) + parseInt(nota3) + parseInt(nota4)) / 4;
+
+        var resultado;
+
+        if (media >= 7) {
+            resultado = "aprovado";
+        }
+        else {
+            resultado = "reprovado";
+        }
+
+        alert(` SUA MEDIA escolar é ${media} e vc esta ${resultado}`)
+    }
+</script>
+
+</html>

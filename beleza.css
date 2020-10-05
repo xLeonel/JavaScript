@@ -1,0 +1,19 @@
+.a {
+    display: flex;
+}
+
+#demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button, input {
+    padding: 0.5em;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: lawngreen;
+    border:5px solid black;
+}

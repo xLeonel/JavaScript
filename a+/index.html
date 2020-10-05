@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoTitle</title>
+</head>
+
+<body>
+    <button onclick="isColdOrHot()">Tá chovendo?</button>
+    <p id="demo"></p>
+
+    <p>Qual seu nivel de satisfação de 0 a 100 ?</p>
+    <input type="text" id="satisfacao" oninput="Satisfation()">
+
+    <script>
+        function isColdOrHot() {
+
+            let result = "";
+            var isRain = confirm("Tá chovendo?");
+            if (isRain) {
+                result = "tire a roupa do varal";
+            }
+            else {
+                result = "que pena :(";
+            }
+
+            document.getElementById("demo").innerHTML = result;
+        }
+
+        function Satisfation() {
+            var numSataisfacao = document.getElementById('satisfacao').value;
+            if (numSataisfacao >= 80) {
+                document.getElementById("demo").innerHTML = "Toma um desconto pra vc meu xara";
+            }
+           
+
+        }
+
+    </script>
+</body>
+
+</html>
